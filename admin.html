@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7f4ef">
+<title>Studio Admin | Foto Star Nepal</title>
+<meta name="description" content="Foto Star Nepal studio demo dashboard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">f</span>
+      <span><strong>FOTO STAR NEPAL</strong><small>Studio workspace</small></span>
+    </a>
+    <div class="nav-label">Workspace</div>
+    <nav class="nav" aria-label="Admin navigation">
+      <a href="#dashboard" data-view="dashboard" class="active"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="8" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="15" width="7" height="6" rx="1"/></svg></span><span>Dashboard</span></a>
+      <a href="#bookings" data-view="bookings"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18m-13 4h3m-3 3h7"/></svg></span><span>Bookings</span></a>
+      <a href="#gallery" data-view="gallery"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></span><span>Gallery</span></a>
+      <a href="#services" data-view="services"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="3" cy="7" r=".5"/><circle cx="3" cy="12" r=".5"/><circle cx="3" cy="17" r=".5"/></svg></span><span>Services</span></a>
+      <a href="#settings" data-view="settings"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.6a8 8 0 0 1-1.6.9l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.6-.9l-1.7.6-1.4-2.4 1.4-1.1a7 7 0 0 1 0-1.9l-1.4-1.1 1.4-2.4 1.7.6a8 8 0 0 1 1.6-.9l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.6.9l1.7-.6 1.4 2.4-1.4 1.1a7 7 0 0 1-.1 1.8Z" transform="translate(-1 -1) scale(1.08)"/></svg></span><span>Settings</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="demo-note"><strong><i class="demo-dot"></i> Local demo mode</strong><p>No accounts or server connected. Changes stay in this browser’s local storage.</p></div>
+      <div class="sidebar-foot">Foto Star Nepal · Lalitpur</div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="crumb">Studio / <strong id="breadcrumbTitle">Dashboard</strong></div>
+      <div class="top-actions"><span class="today" id="todayLabel"></span><span class="avatar" aria-label="Studio admin">FS</span><button class="signout-button" id="signOutButton" type="button">Sign out</button></div>
+    </header>
+
+    <main class="content">
+      <section class="view" id="view-dashboard">
+        <div class="page-head">
+          <div><div class="eyebrow">Studio overview</div><h1>Good to see you.</h1><p class="page-subtitle">Here’s what’s happening at the studio.</p></div>
+          <div class="head-actions"><button class="button button-light" data-action="add-booking"><span>＋</span> Add demo booking</button><button class="button button-primary" data-action="add-gallery"><span>＋</span> Add gallery photo</button></div>
+        </div>
+        <div class="stats">
+          <article class="stat-card"><div class="stat-top"><span>Total bookings</span><span class="stat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></span></div><div class="stat-value" id="stat-total">0</div><div class="stat-foot" id="stat-total-note">Across all demo inquiries</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Awaiting confirmation</span><span class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span></div><div class="stat-value" id="stat-pending">0</div><div class="stat-foot">Requests to follow up</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Upcoming shoots</span><span class="stat-icon"><svg viewBox="0 0 24 24"><path d="M4 16.5 9 11l3 3 7-8"/><path d="M14 6h5v5"/></svg></span></div><div class="stat-value" id="stat-upcoming">0</div><div class="stat-foot">With a preferred date</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Gallery photos</span><span class="stat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></span></div><div class="stat-value" id="stat-gallery">0</div><div class="stat-foot" id="stat-featured">0 featured in portfolio</div></article>
+        </div>
+        <div class="dashboard-grid">
+          <section class="panel"><div class="panel-head"><div><h2 class="panel-title">Upcoming bookings</h2><p class="panel-subtitle">Next preferred shoot dates</p></div><a href="#bookings" class="text-link" data-go="bookings">View bookings →</a></div><div class="booking-list" id="upcomingList"></div></section>
+          <section class="panel"><div class="panel-head"><div><h2 class="panel-title">Recent activity</h2><p class="panel-subtitle">A quick studio timeline</p></div></div><div class="activity-list" id="activityList"></div></section>
+        </div>
+        <section class="panel"><div class="panel-head"><div><h2 class="panel-title">Recent bookings</h2><p class="panel-subtitle">Latest inquiries received</p></div><a href="#bookings" class="text-link" data-go="bookings">All bookings →</a></div><div class="table-wrap"><table><thead><tr><th>Client</th><th>Service</th><th>Preferred date</th><th>Status</th></tr></thead><tbody id="recentBookings"></tbody></table></div></section>
+      </section>
+
+      <section class="view" id="view-bookings" hidden>
+        <div class="page-head"><div><div class="eyebrow">Studio schedule</div><h1>Bookings</h1><p class="page-subtitle">Review local demo inquiries and follow-up status.</p></div><div class="head-actions"><button class="button button-primary" data-action="add-booking">＋ Add demo booking</button></div></div>
+        <section class="panel"><div class="panel-head"><div><h2 class="panel-title">All bookings</h2><p class="panel-subtitle" id="bookingTableNote"></p></div></div><div class="table-wrap"><table><thead><tr><th>Reference</th><th>Client</th><th>Service</th><th>Date & time</th><th>Location</th><th>Status</th><th>Action</th></tr></thead><tbody id="allBookings"></tbody></table></div></section>
+      </section>
+
+      <section class="view" id="view-gallery" hidden>
+        <div class="page-head"><div><div class="eyebrow">Portfolio management</div><h1>Gallery</h1><p class="page-subtitle">Manage photos shown in the public portfolio.</p></div><div class="head-actions"><button class="button button-primary" data-action="add-gallery">＋ Add gallery photo</button></div></div>
+        <div class="stats"><article class="stat-card"><div class="stat-top"><span>All photos</span><span class="stat-icon">▧</span></div><div class="stat-value" id="gallery-total">0</div><div class="stat-foot">Live in the public portfolio</div></article><article class="stat-card"><div class="stat-top"><span>Featured</span><span class="stat-icon">✦</span></div><div class="stat-value" id="gallery-featured">0</div><div class="stat-foot">Shown first in the gallery</div></article><article class="stat-card"><div class="stat-top"><span>Categories</span><span class="stat-icon">⌘</span></div><div class="stat-value" id="gallery-categories">0</div><div class="stat-foot">Filters generated automatically</div></article><article class="stat-card"><div class="stat-top"><span>Storage</span><span class="stat-icon">◉</span></div><div class="stat-value" style="font-size:17px;margin-top:20px">This browser</div><div class="stat-foot">Synced with the public site</div></article></div>
+        <div class="collection-grid" id="galleryGrid"></div>
+      </section>
+
+      <section class="view" id="view-services" hidden>
+        <div class="page-head"><div><div class="eyebrow">What we do</div><h1>Services</h1><p class="page-subtitle">Service catalog shared with the Foto Star public website.</p></div><a class="button button-light" href="index.html#services">View public services ↗</a></div>
+        <div class="service-grid" id="serviceGrid"></div>
+      </section>
+
+      <section class="view" id="view-settings" hidden>
+        <div class="page-head"><div><div class="eyebrow">Workspace preferences</div><h1>Settings</h1><p class="page-subtitle">Demo data and browser storage controls.</p></div></div>
+        <div class="settings-grid">
+          <section class="setting-card"><h2>Studio workspace</h2><p>This dashboard is a local-only demo. No authentication, remote service, or server connection is configured.</p><div class="setting-line"><span>Workspace</span><strong>Foto Star Nepal</strong></div><div class="setting-line"><span>Location</span><strong>Kupondole, Lalitpur</strong></div><div class="setting-line"><span>Data storage</span><strong>Browser localStorage</strong></div><div class="setting-line"><span>Gallery source</span><strong>Shared studio catalog</strong></div></section>
+          <section class="setting-card"><h2>Demo records</h2><p>Remove browser-saved inquiry records. This does not affect the gallery, public website, or preview-only sample rows.</p><div class="setting-line"><span>Saved bookings</span><strong id="settingsBookingCount">0</strong></div><div class="setting-line"><span>Gallery photos</span><strong id="settingsGalleryCount">0</strong></div><button class="button button-danger" id="clearBookings" type="button">Clear saved demo bookings</button></section>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<div class="dialog-backdrop" id="galleryDialogBackdrop" hidden>
+  <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="galleryDialogTitle">
+    <div class="dialog-head"><div><div class="eyebrow">Portfolio item</div><h2 id="galleryDialogTitle">Add a photo</h2></div><button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button></div>
+    <form id="galleryForm">
+      <div class="form-field"><label for="galleryTitle">Photo title</label><input id="galleryTitle" name="title" required maxlength="70" placeholder="e.g. Patan wedding portraits"></div>
+      <div class="form-row"><div class="form-field"><label for="galleryCategory">Category</label><input id="galleryCategory" name="category" required maxlength="30" list="galleryCategoryOptions" placeholder="Weddings"></div><div class="form-field"><label for="galleryHeight">Image height</label><select id="galleryHeight" name="height"><option value="420">Compact</option><option value="540" selected>Standard</option><option value="680">Tall</option></select></div></div>
+      <datalist id="galleryCategoryOptions"></datalist>
+      <div class="form-field"><label for="galleryImage">Image URL</label><input id="galleryImage" name="image" type="url" required placeholder="https://…"></div>
+      <label class="check-field"><input type="checkbox" name="featured"> Mark as featured</label>
+      <p class="form-error" id="galleryFormError" role="alert"></p>
+      <div class="dialog-actions"><button class="button button-light" type="button" data-close-dialog>Cancel</button><button class="button button-primary" type="submit">Add to gallery</button></div>
+    </form>
+  </section>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="js/data.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

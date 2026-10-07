@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foto Star Nepal | Photography & Videography Studio in Lalitpur</title>
+<meta name="description" content="Foto Star Nepal provides professional photography, videography, portraits, passport and visa photos, custom framing, canvas printing and photo restoration in Lalitpur, Nepal.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- Ambient mouse-follow light (desktop only) -->
+<div class="mouse-light" id="mouseLight"></div>
+
+<!-- Custom cursor (desktop only) -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"><span id="cursorRingLabel"></span></div>
+
+<!-- LOADER -->
+<div id="loader" role="status" aria-label="Focusing on the perfect shot">
+  <div class="focus-lens" aria-hidden="true">
+    <span class="focus-ring"></span>
+    <span class="focus-ring focus-ring--middle"></span>
+    <span class="focus-ring focus-ring--inner"></span>
+    <span class="focus-reflection"></span>
+    <span class="focus-point"></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<header id="siteHeader">
+  <div class="wrap">
+  <div class="nav-shell nav-inner">
+    <a href="#top" class="logo">FOTO STAR NEPAL</a>
+    <ul class="nav-links">
+      <li><a href="#top">Home</a></li>
+      <li><a href="#studio">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li class="account-nav"><a href="signin.html" id="accountLink" data-account-link data-signed-in-label="My account">Sign in</a></li>
+    </ul>
+    <a href="#booking" class="nav-cta magnetic" data-cursor="open" id="navBookBtn">
+      <span class="btn-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 7.5A2.5 2.5 0 0 1 8.5 5h7A2.5 2.5 0 0 1 18 7.5v9A2.5 2.5 0 0 1 15.5 19h-7A2.5 2.5 0 0 1 6 16.5v-9Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 5V3.8A1.8 1.8 0 0 1 10.8 2h2.4A1.8 1.8 0 0 1 15 3.8V5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>
+      </span>
+      <span>Book a Shoot</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  </div>
+</header>
+
+<!-- Floating glass booking CTA (desktop) -->
+<a href="#" class="float-cta magnetic" id="floatCta" data-cursor="open">
+  <span class="btn-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 7.5A2.5 2.5 0 0 1 8.5 5h7A2.5 2.5 0 0 1 18 7.5v9A2.5 2.5 0 0 1 15.5 19h-7A2.5 2.5 0 0 1 6 16.5v-9Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 5V3.8A1.8 1.8 0 0 1 10.8 2h2.4A1.8 1.8 0 0 1 15 3.8V5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>
+  </span>
+  <span>Book a Shoot</span><span class="arrow">↗</span>
+</a>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <nav class="mobile-menu-panel" aria-label="Mobile navigation">
+    <button type="button" class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+    </button>
+    <a href="#top">Home</a>
+    <a href="#studio">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+    <a href="signin.html" id="mobileAccountLink" data-account-link data-signed-in-label="My account">Sign in</a>
+    <a href="#booking" class="btn btn-outline nav-cta">Book a Shoot</a>
+    <div class="mobile-menu-social">
+      <div class="mobile-menu-social-title">Follow Us</div>
+      <div class="social-links" role="group" aria-label="Follow Foto Star Nepal">
+        <a class="social-link" data-social-profile="instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="social-fill" cx="17.7" cy="6.6" r="1"/></svg><span>Instagram</span>
+        </a>
+        <a class="social-link" data-social-profile="facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="social-fill" d="M13.2 21v-8.2H16l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6v2H6.5v3.2h2.8V21h3.9Z"/></svg><span>Facebook</span>
+        </a>
+        <a class="social-link" data-social-profile="tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 3.5v11.1a4.1 4.1 0 1 1-3.2-4V14a1.5 1.5 0 1 0 .5 1.1V3.5h2.7c.2 2.1 1.5 3.7 3.7 4.2v2.8a8 8 0 0 1-3.7-1.7"/></svg><span>TikTok</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-media">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1800&auto=format&fit=crop" alt="Bride and groom candid moment during a wedding reception in Lalitpur" fetchpriority="high">
+  </div>
+  <div class="hero-focus">
+    <span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span>
+  </div>
+  <div class="hero-content" id="heroContent">
+    <div class="hero-loc">Lalitpur, Nepal</div>
+    <h1>
+      <span class="mask-line"><span>Moments worth</span></span>
+      <span class="mask-line"><span>remembering.</span></span>
+    </h1>
+    <p class="hero-sub">Photography, videography and creative imaging for life's moments, milestones and memories.</p>
+    <div class="hero-ctas">
+      <a href="#portfolio" class="btn btn-solid magnetic" data-cursor="open">View Our Work</a>
+      <a href="#booking" class="btn btn-outline magnetic" data-cursor="open">
+        <span class="btn-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 7.5A2.5 2.5 0 0 1 8.5 5h7A2.5 2.5 0 0 1 18 7.5v9A2.5 2.5 0 0 1 15.5 19h-7A2.5 2.5 0 0 1 6 16.5v-9Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 5V3.8A1.8 1.8 0 0 1 10.8 2h2.4A1.8 1.8 0 0 1 15 3.8V5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+        <span>Book a Shoot</span>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>SCROLL</span><span class="line"></span></div>
+</section>
+
+<!-- INTRO / BRAND STATEMENT -->
+<section class="section-pad brand-story" aria-labelledby="brandStoryTitle">
+  <div class="wrap intro-grid">
+    <div class="intro-copy reveal">
+      <div class="eyebrow">Foto Star Nepal <span class="brand-story-mark" aria-hidden="true"></span> Lalitpur</div>
+      <h2 class="stmt" id="brandStoryTitle">We don't just take pictures.</h2>
+      <p class="intro-promise">We preserve <span>how a moment felt.</span></p>
+      <p class="lede">From celebrations and portraits to official photographs and restored memories, we pair professional photography with thoughtful editing and quality prints.</p>
+    </div>
+    <figure class="intro-img reveal">
+      <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?q=80&w=1200&auto=format&fit=crop" alt="Photographer adjusting a camera during a portrait session" loading="lazy" decoding="async">
+      <figcaption><span>Behind the frame</span><span>01 / 02</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section-pad" id="portfolio" style="background:var(--sand);">
+  <div class="wrap">
+    <div class="portfolio-head">
+      <div>
+        <div class="eyebrow">Portfolio</div>
+        <h2 class="stmt">Captured by Foto Star</h2>
+      </div>
+      <div class="filter-row" id="filterRow" role="group" aria-label="Filter portfolio by category"></div>
+    </div>
+
+    <div class="masonry" id="masonryGrid"></div>
+  </div>
+</section>
+
+<!-- HORIZONTAL REEL -->
+<section class="section-pad reel-section">
+  <div class="wrap">
+    <div class="reel-head">
+      <div>
+        <div class="eyebrow">The Reel</div>
+        <h2 class="stmt" style="max-width:11ch;">One scroll through everything we shoot.</h2>
+      </div>
+      <div class="reel-progress" id="reelProgress">01 / 06</div>
+    </div>
+    <div class="reel-track" id="reelTrack">
+      <div class="reel-card" data-cursor="drag"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop" alt="Wedding photography" loading="lazy" decoding="async"><div class="rc-label glass-panel-dark">Wedding</div></div>
+      <div class="reel-card" data-cursor="drag"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" alt="Portrait photography" loading="lazy" decoding="async"><div class="rc-label glass-panel-dark">Portrait</div></div>
+      <div class="reel-card" data-cursor="drag"><img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=800&auto=format&fit=crop" alt="Cultural event photography" loading="lazy" decoding="async"><div class="rc-label glass-panel-dark">Cultural Event</div></div>
+      <div class="reel-card" data-cursor="drag"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop" alt="Corporate photography" loading="lazy" decoding="async"><div class="rc-label glass-panel-dark">Corporate</div></div>
+      <div class="reel-card" data-cursor="drag"><img src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?q=80&w=800&auto=format&fit=crop" alt="Photo restoration" loading="lazy" decoding="async"><div class="rc-label glass-panel-dark">Restoration</div></div>
+      <div class="reel-card" data-cursor="drag"><img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=800&auto=format&fit=crop" alt="Photo framing" loading="lazy" decoding="async"><div class="rc-label glass-panel-dark">Framing</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle" aria-hidden="true">
+  <div class="lightbox-bg" id="lightboxBg"></div>
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightboxClose" data-cursor="close" aria-label="Close">✕</button>
+    <button class="lightbox-nav lb-prev" id="lbPrev" data-cursor="" aria-label="Previous">‹</button>
+    <button class="lightbox-nav lb-next" id="lbNext" data-cursor="" aria-label="Next">›</button>
+    <div class="lightbox-img-wrap"><img id="lightboxImg" src="" alt=""></div>
+    <div class="lightbox-cap">
+      <span id="lightboxTitle"></span>
+      <span class="lc-count" id="lightboxCount" aria-live="polite"></span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section-pad" id="services">
+  <div class="wrap">
+    <div class="eyebrow">Services</div>
+    <h2 class="stmt" style="margin-bottom:56px;">From moments to memories.</h2>
+
+    <div class="services">
+      <div class="service-list" id="serviceList"></div>
+      <div class="service-visual" id="serviceVisual">
+        <div class="service-panel glass-panel-dark" id="servicePanel">
+          <div class="sp-num" id="spNum">01</div>
+          <h4 id="spTitle">Wedding &amp; Reception</h4>
+          <p id="spBody">Full-day coverage of the ceremony, candid moments and celebration.</p>
+          <a href="#booking" class="sp-link" id="spLink">Book this service ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE STORY -->
+<section class="signature">
+  <div class="wrap section-pad">
+    <div class="eyebrow" style="color:var(--terracotta);">Signature Story</div>
+    <h2 class="stmt" style="color:var(--ivory); max-width:12ch;">Every frame has a story.</h2>
+
+    <div class="sig-track" style="margin-top:50px;">
+      <div class="sig-step reveal">
+        <div>
+          <div class="sig-num">The Moment</div>
+          <h3>Something happens that won't happen again.</h3>
+          <p>A glance, a ritual, a laugh at the wrong moment made right. We arrive before it starts, and we stay ready for what we can't predict.</p>
+        </div>
+        <div class="sig-img"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop" alt="A candid emotional moment during a family celebration" loading="lazy" decoding="async"></div>
+      </div>
+      <div class="sig-step reveal">
+        <div>
+          <div class="sig-num">The Frame</div>
+          <h3>Light, composition and timing meet.</h3>
+          <p>Our photographers read a room before they read a scene — where the light falls, where the story is, where to stand so we don't get in the way of it.</p>
+        </div>
+        <div class="sig-img"><img src="https://images.unsplash.com/photo-1519183071298-a2962be90b8e?q=80&w=1200&auto=format&fit=crop" alt="Photographer composing a shot with natural light" loading="lazy" decoding="async"></div>
+      </div>
+      <div class="sig-step reveal">
+        <div>
+          <div class="sig-num">The Memory</div>
+          <h3>Edited, printed, kept.</h3>
+          <p>Every photograph is reviewed, color-graded and delivered with care — and if you want it off the screen, we can frame it, print it, and hang it on your wall.</p>
+        </div>
+        <div class="sig-img"><img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?q=80&w=1200&auto=format&fit=crop" alt="Framed photographs displayed as finished prints" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="eyebrow">Why Foto Star</div>
+    <h2 class="stmt">Why Foto Star?</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <h4>Professional Photography</h4>
+        <p>Thoughtful composition, lighting and visual storytelling in every frame.</p>
+      </div>
+      <div class="why-item">
+        <h4>Experienced Service</h4>
+        <p>Professional handling from your first inquiry through to final delivery.</p>
+      </div>
+      <div class="why-item">
+        <h4>Multiple Services</h4>
+        <p>Photography, videography, portraits, official photos, framing and restoration under one roof.</p>
+      </div>
+      <div class="why-item">
+        <h4>High-Quality Output</h4>
+        <p>Careful editing and professional image production, every time.</p>
+      </div>
+      <div class="why-item">
+        <h4>Personalized Approach</h4>
+        <p>Every event and client receives attention based on their own requirements.</p>
+      </div>
+      <div class="why-item">
+        <h4>Local & Convenient</h4>
+        <p>Based on Pulchowk Main Road, Kupondole, Lalitpur — easy to find, easy to reach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO -->
+<section class="section-pad studio-story" id="studio" style="background:var(--sand);" aria-labelledby="studioStoryTitle">
+  <div class="wrap">
+    <div class="studio-story-head reveal">
+      <div>
+        <div class="eyebrow">The Studio <span class="brand-story-mark" aria-hidden="true"></span> Behind every frame</div>
+        <h2 class="stmt" id="studioStoryTitle">More than a studio.</h2>
+      </div>
+      <p class="lede">From cameras and light to careful editing and printmaking, every part of the image comes together here.</p>
+    </div>
+    <div class="studio-grid" aria-label="Inside the Foto Star Nepal studio">
+      <figure class="g1 reveal"><img src="https://images.unsplash.com/photo-1495707902641-75cac588d2e9?q=80&w=1200&auto=format&fit=crop" alt="Interior of the Foto Star Nepal studio with lighting equipment" loading="lazy" decoding="async"><figcaption><span>The working studio</span><span>01</span></figcaption></figure>
+      <figure class="g2 reveal"><img src="https://images.unsplash.com/photo-1519183071298-a2962be90b8e?q=80&w=800&auto=format&fit=crop" alt="Camera and lens equipment on a studio table" loading="lazy" decoding="async"><figcaption><span>Tools of the craft</span><span>02</span></figcaption></figure>
+      <figure class="g3 reveal"><img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=800&auto=format&fit=crop" alt="Editor retouching a photograph on a monitor" loading="lazy" decoding="async"><figcaption><span>Careful editing</span><span>03</span></figcaption></figure>
+      <figure class="g4 reveal"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=800&auto=format&fit=crop" alt="Studio lighting softbox setup" loading="lazy" decoding="async"><figcaption><span>Shaped by light</span><span>04</span></figcaption></figure>
+      <figure class="g5 reveal"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop" alt="Photographer working with a client in studio" loading="lazy" decoding="async"><figcaption><span>Made with people</span><span>05</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="eyebrow">Photo Restoration</div>
+    <h2 class="stmt">Give old memories a new life.</h2>
+    <p class="lede">Drag the slider to see a restoration example — from a damaged, faded original to a repaired, colour-corrected print. (Sample image shown; real client examples to be added by the studio.)</p>
+    <div class="ba-wrap">
+      <div>
+        <div class="ba" id="baSlider">
+          <img class="ba-before" src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?q=80&w=1200&auto=format&fit=crop&sat=-100&con=-10" alt="Original faded photograph before restoration" loading="lazy" decoding="async">
+          <img class="ba-after" src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?q=80&w=1200&auto=format&fit=crop" alt="Restored and colour-corrected photograph after editing" loading="lazy" decoding="async">
+          <div class="ba-label before">Original</div>
+          <div class="ba-label after">Restored</div>
+          <div class="ba-handle" id="baHandle"></div>
+        </div>
+        <input type="range" class="ba-slider" id="baRange" min="0" max="100" value="50">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRAMING -->
+<section class="section-pad" style="background:var(--sand);">
+  <div class="wrap">
+    <div class="eyebrow">Framing & Prints</div>
+    <h2 class="stmt">Take your memories off the screen.</h2>
+    <p class="lede">Custom wood and synthetic frames, canvas prints and large-format wall art — finished by hand in the studio.</p>
+    <div class="framing-grid">
+      <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=800&auto=format&fit=crop" alt="Framed wedding photograph on a wall" loading="lazy" decoding="async">
+      <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=800&auto=format&fit=crop" alt="Canvas print of a family portrait" loading="lazy" decoding="async">
+      <img src="https://images.unsplash.com/photo-1582201957534-13e2d2a91d31?q=80&w=800&auto=format&fit=crop" alt="Close up of a custom wood photo frame" loading="lazy" decoding="async">
+    </div>
+    <a href="#booking" class="btn btn-outline" style="margin-top:36px; border-color:var(--charcoal);">Explore Framing</a>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="eyebrow">Client Stories</div>
+    <h2 class="stmt">Stories from our clients.</h2>
+    <div class="testi-track" id="testimonialTrack" aria-label="Client stories"></div>
+    <p style="font-size:12.5px; color:#8a8a8a; margin-top:18px;">Reviews shown are placeholders pending real client testimonials from the studio.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-pad" style="background:var(--sand);">
+  <div class="wrap" style="max-width:900px;">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="stmt" style="margin-bottom:40px;">Questions, answered.</h2>
+    <div id="faqList"></div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking section-pad" id="booking">
+  <div class="wrap booking-grid">
+    <div>
+      <div class="eyebrow">Booking</div>
+      <h2 class="stmt">A few details. A frame worth keeping.</h2>
+      <p class="lede">Share what you have in mind. We’ll confirm availability and the next steps with you directly.</p>
+      <div class="booking-ctas">
+        <a href="#" id="waCta" target="_blank" class="btn btn-solid">WhatsApp Us</a>
+        <a href="tel:+97715520000" class="btn btn-outline">Call the Studio</a>
+      </div>
+    </div>
+
+    <form id="bookingForm">
+      <div class="booking-progress" aria-label="Booking progress">
+        <div class="booking-progress-top">
+          <span class="booking-step-count" id="bookingStepCount">01 <span>/ 06</span></span>
+          <span class="booking-step-name" id="bookingStepName">Choose a service</span>
+        </div>
+        <div class="booking-progress-track" id="bookingProgressTrack" aria-hidden="true">
+          <span class="complete"></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="booking-form-content" id="bookingFormContent">
+        <section class="booking-step active" data-step="1" aria-labelledby="bookingStepTitle1">
+          <div class="booking-step-heading">
+            <div class="booking-step-kicker">01 / Service</div>
+            <h3 id="bookingStepTitle1">What are we capturing?</h3>
+            <p>Choose the service that feels right.</p>
+          </div>
+          <div class="booking-service-grid" role="radiogroup" aria-label="Choose a photography service">
+            <label class="booking-service-card"><input type="radio" name="bookingServiceChoice" value="Wedding / Reception" required><span class="booking-service-number">01</span><span class="booking-service-name">Wedding & Reception</span><span class="booking-service-arrow">↗</span></label>
+            <label class="booking-service-card"><input type="radio" name="bookingServiceChoice" value="Cultural Event"><span class="booking-service-number">02</span><span class="booking-service-name">Cultural & Events</span><span class="booking-service-arrow">↗</span></label>
+            <label class="booking-service-card"><input type="radio" name="bookingServiceChoice" value="Portrait"><span class="booking-service-number">03</span><span class="booking-service-name">Portraits</span><span class="booking-service-arrow">↗</span></label>
+            <label class="booking-service-card"><input type="radio" name="bookingServiceChoice" value="Corporate Headshot"><span class="booking-service-number">04</span><span class="booking-service-name">Corporate</span><span class="booking-service-arrow">↗</span></label>
+            <label class="booking-service-card"><input type="radio" name="bookingServiceChoice" value="Passport / Visa Photo"><span class="booking-service-number">05</span><span class="booking-service-name">Passport & Visa</span><span class="booking-service-arrow">↗</span></label>
+            <label class="booking-service-card"><input type="radio" name="bookingServiceChoice" value="Photo Framing"><span class="booking-service-number">06</span><span class="booking-service-name">Photo Framing</span><span class="booking-service-arrow">↗</span></label>
+            <label class="booking-service-card"><input type="radio" name="bookingServiceChoice" value="Canvas Printing"><span class="booking-service-number">07</span><span class="booking-service-name">Canvas Prints</span><span class="booking-service-arrow">↗</span></label>
+            <label class="booking-service-card"><input type="radio" name="bookingServiceChoice" value="Photo Restoration"><span class="booking-service-number">08</span><span class="booking-service-name">Photo Restoration</span><span class="booking-service-arrow">↗</span></label>
+            <label class="booking-service-card"><input type="radio" name="bookingServiceChoice" value="Other"><span class="booking-service-number">09</span><span class="booking-service-name">Something else</span><span class="booking-service-arrow">↗</span></label>
+          </div>
+          <select id="fservice" name="service" class="booking-service-value" aria-hidden="true" tabindex="-1">
+            <option value="" selected disabled>Select a service</option><option>Wedding / Reception</option><option>Cultural Event</option><option>Portrait</option>
+            <option>Corporate Headshot</option><option>Passport / Visa Photo</option><option>Photo Framing</option>
+            <option>Canvas Printing</option><option>Photo Restoration</option><option>Other</option>
+          </select>
+        </section>
+
+        <section class="booking-step" data-step="2" aria-labelledby="bookingStepTitle2" hidden>
+          <div class="booking-step-heading">
+            <div class="booking-step-kicker">02 / Date</div>
+            <h3 id="bookingStepTitle2">Choose a date.</h3>
+            <p>Pick a day that works for you.</p>
+          </div>
+          <div class="field"><label for="fdate">Preferred date <span>*</span></label><input type="date" id="fdate" name="date" required></div>
+          <p class="booking-inline-note">Availability is simulated for this demo and confirmed with the studio.</p>
+        </section>
+
+        <section class="booking-step" data-step="3" aria-labelledby="bookingStepTitle3" hidden>
+          <div class="booking-step-heading">
+            <div class="booking-step-kicker">03 / Time</div>
+            <h3 id="bookingStepTitle3">Choose a time.</h3>
+            <p id="bookingTimeDate">Select a date to see available times.</p>
+          </div>
+          <div class="booking-time-slots" id="bookingTimeSlots" role="group" aria-label="Available appointment times"></div>
+          <input type="hidden" id="ftime" name="time" value="">
+        </section>
+
+        <section class="booking-step" data-step="4" aria-labelledby="bookingStepTitle4" hidden>
+          <div class="booking-step-heading">
+            <div class="booking-step-kicker">04 / Your details</div>
+            <h3 id="bookingStepTitle4">Who should we contact?</h3>
+            <p>Just the essentials to follow up with you.</p>
+          </div>
+          <div class="field"><label for="fname">Full name <span>*</span></label><input type="text" id="fname" name="name" autocomplete="name" placeholder="Your name" required></div>
+          <div class="field-row">
+            <div class="field"><label for="fphone">Phone number <span>*</span></label><input type="tel" id="fphone" name="phone" autocomplete="tel" placeholder="+977" required></div>
+            <div class="field"><label for="femail">Email <span class="optional-label">Optional</span></label><input type="email" id="femail" name="email" autocomplete="email" placeholder="you@example.com"></div>
+          </div>
+          <div class="field">
+            <label for="fmsg">Additional requirements <span class="optional-label">Optional</span></label>
+            <textarea id="fmsg" name="requirements" rows="3" placeholder="Style, coverage or anything you'd like us to know"></textarea>
+          </div>
+        </section>
+
+        <section class="booking-step" data-step="5" aria-labelledby="bookingStepTitle5" hidden>
+          <div class="booking-step-heading">
+            <div class="booking-step-kicker">05 / Location</div>
+            <h3 id="bookingStepTitle5">Where will it happen?</h3>
+            <p>Choose a studio visit or tell us where to meet you.</p>
+          </div>
+          <div class="booking-location-options" role="radiogroup" aria-label="Choose shoot location">
+            <label><input type="radio" name="bookingLocation" value="Foto Star Nepal Studio" required><span>At our studio</span></label>
+            <label><input type="radio" name="bookingLocation" value="On location"><span>At my location</span></label>
+            <label><input type="radio" name="bookingLocation" value="To be confirmed"><span>To be confirmed</span></label>
+          </div>
+          <div class="field booking-address-field" id="bookingAddressField" hidden>
+            <label for="flocation">Venue or address <span>*</span></label>
+            <input type="text" id="flocation" name="location" autocomplete="street-address" placeholder="Venue name, area or address">
+          </div>
+          <p class="booking-inline-note" id="bookingLocationNote">Studio: Kupondole / Pulchowk Main Road, Lalitpur.</p>
+        </section>
+
+        <section class="booking-step" data-step="6" aria-labelledby="bookingStepTitle6" hidden>
+          <div class="booking-step-heading">
+            <div class="booking-step-kicker">06 / Review</div>
+            <h3 id="bookingStepTitle6">Your booking at a glance.</h3>
+            <p>Check the details before sending your inquiry.</p>
+          </div>
+          <div class="booking-summary" id="bookingSummary"></div>
+          <p class="booking-inline-note">Your date is a preference. We’ll confirm availability directly with you.</p>
+        </section>
+      </div>
+
+      <p class="booking-step-error" id="bookingStepError" role="alert" hidden></p>
+      <div class="booking-confirmation" id="bookingConfirmation" hidden aria-live="polite">
+        <span class="booking-confirmation-mark" aria-hidden="true">✓</span>
+        <div class="booking-step-kicker">Request received · Demo</div>
+        <h3 id="bookingSuccessTitle" tabindex="-1">Your shoot is on its way.</h3>
+        <p id="bookingConfirmationNote">Your demo request is saved in this browser.</p>
+        <div class="booking-reference">
+          <span>Booking reference</span>
+          <strong id="bookingReference"></strong>
+        </div>
+        <div class="booking-summary booking-success-summary" id="bookingSuccessSummary"></div>
+        <a href="#" class="booking-whatsapp-fallback" id="bookingWhatsAppFallback" target="_blank" rel="noopener">Send details via WhatsApp ↗</a>
+        <button type="button" class="booking-restart" id="bookingRestart">Start another inquiry</button>
+      </div>
+
+      <div class="booking-form-footer" id="bookingFormFooter">
+        <button type="button" class="booking-back" id="bookingBack" disabled><span aria-hidden="true">←</span> Back</button>
+        <span class="booking-footer-note" id="bookingFooterNote">No payment required</span>
+        <button type="button" class="btn btn-solid booking-next" id="bookingNext">Continue <span aria-hidden="true">→</span></button>
+      </div>
+      <p class="form-note booking-privacy-note" id="bookingPrivacyNote">Demo only: details are saved in this browser and are not sent to a server. Send the WhatsApp message to contact the studio. Clear this site’s browser data to remove saved inquiries.</p>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT / MAP -->
+<section class="section-pad" id="contact">
+  <div class="wrap">
+    <div class="contact-heading">
+      <div class="contact-heading-copy">
+        <div class="eyebrow">Find the Studio</div>
+        <h2 class="stmt">Visit us in Lalitpur.</h2>
+        <p class="contact-intro">Plan your visit or speak with the studio directly.</p>
+      </div>
+      <div class="contact-primary-actions">
+        <a href="#booking" class="btn btn-solid">Book a Shoot
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#" id="waCta2" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color:var(--charcoal);">WhatsApp
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.1A8 8 0 1 1 20 11.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 9.1c.2-.4.4-.4.7-.4h.4c.2 0 .3.1.4.4l.6 1.4c.1.2 0 .4-.1.6l-.5.6c-.1.2-.2.3 0 .5.4.7 1 1.3 1.7 1.7.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.6-.1l1.3.6c.3.1.4.2.4.4 0 .3-.2.8-.5 1.1-.4.4-.9.6-1.5.5-1-.1-2.2-.7-3.4-1.7-1-.9-1.7-2-1.9-2.9-.2-.8 0-1.4.3-1.9Z" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-details">
+        <div class="contact-details-kicker">Studio details</div>
+        <a class="contact-address" href="https://www.google.com/maps/search/?api=1&amp;query=Kupondole+Pulchowk+Main+Road+Lalitpur" target="_blank" rel="noopener noreferrer" aria-label="Get directions to Kupondole / Pulchowk Main Road, Lalitpur">
+          <span class="contact-address-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="2.3" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          <span class="contact-address-copy">
+            <span class="contact-label">Visit the studio</span>
+            <span class="contact-address-value">Kupondole / Pulchowk Main Road, Lalitpur 44600, Nepal</span>
+          </span>
+          <svg class="contact-address-link" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <span class="contact-method-label">Call the studio</span>
+            <a class="contact-method-value" href="tel:+97715520000">+977 1-5520000</a>
+          </div>
+          <div class="contact-method">
+            <span class="contact-method-label">Mobile / WhatsApp</span>
+            <a class="contact-method-value" href="tel:+9779841000000">+977 9841000000</a>
+          </div>
+          <div class="contact-method">
+            <span class="contact-method-label">Email</span>
+            <a class="contact-method-value" href="mailto:fotostarnepal@gmail.com">fotostarnepal@gmail.com</a>
+          </div>
+          <div class="contact-method">
+            <span class="contact-method-label">Studio hours</span>
+            <span class="contact-method-value">Sunday – Friday, 9:00 AM – 7:30 PM. Closed Saturday.<span class="contact-hours-note">Please confirm current hours with the studio.</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="map-box">
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps?q=Kupondole,Lalitpur,Nepal&amp;output=embed" loading="lazy" title="Foto Star Nepal location map"></iframe>
+        </div>
+        <div class="map-caption">
+          <span>Kupondole · Lalitpur</span>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Kupondole+Pulchowk+Main+Road+Lalitpur" target="_blank" rel="noopener noreferrer">Open in Maps
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap footer-cta" id="footerCta">
+    <div class="footer-cta-copy">
+      <div class="footer-cta-kicker">The next frame starts here</div>
+      <h2><span>Let's make it unforgettable.</span></h2>
+    </div>
+    <a href="#booking" class="btn btn-outline magnetic" data-cursor="open">Plan your shoot
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand reveal">
+        <a href="#top" class="foot-brand-lockup" aria-label="Foto Star Nepal home">
+          <svg class="foot-brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 12V5h7M20 5h7v7M27 20v7h-7M12 27H5v-7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="16" cy="16" r="6.2" stroke="currentColor" stroke-width="1.4"/><circle cx="16" cy="16" r="1.5" fill="currentColor"/></svg>
+          <span class="logo">FOTO STAR NEPAL</span>
+        </a>
+        <p>Preserving Your Precious Moments in Every Frame.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col reveal">
+          <h5>NAVIGATE</h5>
+          <a href="#top">Home</a><a href="#studio">About</a><a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a><a href="#contact">Contact</a>
+          <a href="admin.html">Studio Dashboard <span aria-label="demo">· Demo</span></a>
+          <a href="signin.html" id="footerAccountLink" data-account-link data-signed-in-label="My account">Sign in</a>
+        </div>
+        <div class="foot-col reveal">
+          <h5>CONTACT</h5>
+          <a href="tel:+9779841000000">+977 9841000000</a>
+          <a href="mailto:fotostarnepal@gmail.com">fotostarnepal@gmail.com</a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Kupondole+Pulchowk+Main+Road+Lalitpur" target="_blank" rel="noopener noreferrer">Kupondole, Lalitpur 44600</a>
+        </div>
+        <div class="foot-col reveal">
+          <h5>HOURS</h5>
+          <p>Sun – Fri, 9:00 AM – 7:30 PM</p><p>Closed Saturday</p>
+        </div>
+        <div class="foot-col foot-social reveal">
+          <h5>FOLLOW US</h5>
+          <div class="social-links" role="group" aria-label="Follow Foto Star Nepal">
+            <a class="social-link" data-social-profile="instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="social-fill" cx="17.7" cy="6.6" r="1"/></svg>
+            </a>
+            <a class="social-link" data-social-profile="facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path class="social-fill" d="M13.2 21v-8.2H16l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6v2H6.5v3.2h2.8V21h3.9Z"/></svg>
+            </a>
+            <a class="social-link" data-social-profile="tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 3.5v11.1a4.1 4.1 0 1 1-3.2-4V14a1.5 1.5 0 1 0 .5 1.1V3.5h2.7c.2 2.1 1.5 3.7 3.7 4.2v2.8a8 8 0 0 1-3.7-1.7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Foto Star Nepal. All rights reserved.</span>
+      <span>Lalitpur, Nepal</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="tel:+97715520000" class="call">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.6 4.2a1.8 1.8 0 0 1 1.7 1.1l.8 2.1a1.8 1.8 0 0 1-.5 1.9l-1 .9a13.7 13.7 0 0 0 7.5 7.5l.9-1a1.8 1.8 0 0 1 1.9-.5l2.1.8a1.8 1.8 0 0 1 1.1 1.7v2.1A1.8 1.8 0 0 1 19.4 20c-8.9 0-16.2-7.3-16.2-16.2A1.8 1.8 0 0 1 5 2h2.1Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Call</span>
+  </a>
+  <a href="#" class="book" id="mobileBookCta" aria-label="Book a shoot">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4.5 8A2.5 2.5 0 0 1 7 5.5h2l1.2-1.7h3.6L15 5.5h2A2.5 2.5 0 0 1 19.5 8v9A2.5 2.5 0 0 1 17 19.5H7A2.5 2.5 0 0 1 4.5 17V8Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12.5" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>
+    <span>Book a Shoot</span>
+  </a>
+  <a href="#" id="waCta3" target="_blank" class="wa">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 11.8A8.2 8.2 0 0 1 8.3 20L4 20l1.1-4.3A8.2 8.2 0 1 1 20 11.8Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.8 8.6c.2-.4.4-.4.6-.4.1 0 .3 0 .4.1.1.1.4.4.4.9s-.4 1-.7 1.3c-.2.2-.3.4-.2.7.1.3.8 1.5 1.9 2.5 1.2 1.1 2.2 1.3 2.5 1.4.3.1.5 0 .7-.1.3-.2.8-.8 1-.9.2-.1.4-.1.7 0l.6.3c.3.2.4.4.4.7 0 .3-.2 1-.8 1.5-.7.6-1.3.9-2.3.9-1.6 0-3.2-.8-4.6-2.1A12.7 12.7 0 0 1 9 13c-.5-.8-.8-1.7-.8-2.7 0-.5.2-1 .7-1.4l.1-.1Z" fill="currentColor"/></svg>
+    <span>WhatsApp</span>
+  </a>
+</div>
+
+<!-- GLASS BOOKING MODAL -->
+<div class="booking-modal" id="bookingModal" aria-hidden="true">
+  <div class="booking-modal-bg" id="modalBg"></div>
+  <div class="booking-modal-panel">
+    <button class="booking-modal-close" id="modalClose" data-cursor="close" aria-label="Close">✕</button>
+    <div class="eyebrow">Booking</div>
+    <h2 class="stmt" style="font-size:clamp(1.5rem,3.4vw,2.1rem); margin-bottom:22px;">Let's plan your shoot.</h2>
+    <form id="modalForm">
+      <div class="field-row">
+        <div class="field"><label for="mfname">Full Name</label><input type="text" id="mfname" required></div>
+        <div class="field"><label for="mfphone">Phone Number</label><input type="tel" id="mfphone" required></div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="mfservice">Service Needed</label>
+          <select id="mfservice">
+            <option>Wedding / Reception</option>
+            <option>Cultural Event</option>
+            <option>Portrait</option>
+            <option>Corporate Headshot</option>
+            <option>Passport / Visa Photo</option>
+            <option>Photo Framing</option>
+            <option>Canvas Printing</option>
+            <option>Photo Restoration</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field"><label for="mfdate">Event Date</label><input type="date" id="mfdate"></div>
+      </div>
+      <div class="field"><label for="mflocation">Event Location</label><input type="text" id="mflocation" placeholder="Venue or address"></div>
+      <div class="field"><label for="mfmsg">Message / Requirements</label><textarea id="mfmsg" rows="3"></textarea></div>
+      <button type="submit" class="btn btn-solid" style="width:100%; justify-content:center; margin-top:6px;">Send Inquiry</button>
+      <p class="form-note" id="modalFormStatus" role="status" aria-live="polite" style="color:#8a8a8a;">This opens WhatsApp with your details pre-filled. Demo inquiries are saved only in this browser; clear this site’s browser data to remove them.</p>
+    </form>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/main.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/booking.js"></script>
+</body>
+</html>

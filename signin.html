@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in | Foto Star Nepal</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/signin.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ====== Visual side ====== -->
+  <aside class="visual" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1800&auto=format&fit=crop" alt="">
+    <a class="brand" href="index.html" tabindex="-1">
+      <svg viewBox="0 0 32 32" fill="none"><path d="M5 12V5h7M20 5h7v7M27 20v7h-7M12 27H5v-7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="16" cy="16" r="6.2" stroke="currentColor" stroke-width="1.4"/><circle cx="16" cy="16" r="1.5" fill="currentColor"/></svg>
+      <span>FOTO STAR NEPAL</span>
+    </a>
+    <div class="focus-corners"><i></i><i></i><i></i><i></i></div>
+    <div class="visual-copy">
+      <div class="visual-kicker" id="visualKicker">Client portal</div>
+      <h2 id="visualTitle">Moments worth remembering.</h2>
+      <p id="visualText">Sign in to manage your bookings, follow your shoot and keep every memory in one place.</p>
+    </div>
+  </aside>
+
+  <!-- ====== Form side ====== -->
+  <main class="panel">
+    <div class="panel-top">
+      <a class="back-link" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to website
+      </a>
+      <a class="panel-brand" href="index.html">FOTO STAR</a>
+    </div>
+
+    <div class="card" id="card">
+
+      <!-- Header (changes per view) -->
+      <div id="head">
+        <div class="eyebrow" id="eyebrow">Welcome back</div>
+        <h1 id="title">Sign in to your account.</h1>
+        <p class="sub" id="subtitle">Enter your details to continue.</p>
+      </div>
+
+      <!-- Role switch -->
+      <div class="roles" id="roles" data-role="client" role="tablist" aria-label="Account type">
+        <span class="thumb" aria-hidden="true"></span>
+        <button type="button" role="tab" aria-selected="true" data-role="client">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c.6-3.6 3.5-5.5 7-5.5s6.4 1.9 7 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          Client
+        </button>
+        <button type="button" role="tab" aria-selected="false" data-role="staff">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          Staff
+        </button>
+      </div>
+
+      <!-- ===== CLIENT SIGN IN ===== -->
+      <section class="view active" id="view-client-signin">
+        <div class="alert error" id="clientSigninAlert" role="alert"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5v5.5M12 16.4v.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span></span></div>
+        <form id="clientSigninForm" novalidate>
+          <div class="field" data-field="email">
+            <label for="cEmail">Email address</label>
+            <div class="input-wrap">
+              <svg class="lead" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="m4.5 7.5 7.5 5.5 7.5-5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <input type="email" id="cEmail" autocomplete="email" placeholder="you@example.com" inputmode="email" autocapitalize="off" spellcheck="false">
+            </div>
+            <div class="field-error">Enter a valid email address.</div>
+          </div>
+          <div class="field" data-field="password">
+            <div class="label-row"><label for="cPass" style="margin:0">Password</label><button type="button" data-goto="forgot">Forgot password?</button></div>
+            <div class="input-wrap">
+              <svg class="lead" viewBox="0 0 24 24" fill="none"><rect x="4.5" y="10.5" width="15" height="9.5" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <input type="password" id="cPass" class="has-toggle" autocomplete="current-password" placeholder="Your password">
+              <button type="button" class="toggle-pw" aria-label="Show password" data-toggle="cPass">
+                <svg class="eye" viewBox="0 0 24 24" fill="none"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+                <svg class="eye-off" viewBox="0 0 24 24" fill="none"><path d="M3 3l18 18M10.6 6a9.6 9.6 0 0 1 1.4-.1c6 0 9.5 6.1 9.5 6.1a16 16 0 0 1-3 3.7M6.4 7.7A16 16 0 0 0 2.5 12S6 18.5 12 18.5c1.5 0 2.9-.4 4.1-1M9.9 10a3 3 0 0 0 4.1 4.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="field-error">Enter your password.</div>
+          </div>
+          <div class="row-between">
+            <label class="check"><input type="checkbox" id="cRemember"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="m2.5 6.3 2.4 2.4 4.6-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Keep me signed in</label>
+          </div>
+          <button type="submit" class="btn">
+            <span class="spinner" aria-hidden="true"></span>
+            <span class="btn-label">Sign in</span><span class="btn-loading-label">Signing in…</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+        <div class="switch-line">New to Foto Star? <button type="button" data-goto="signup">Create an account</button></div>
+      </section>
+
+      <!-- ===== CLIENT SIGN UP ===== -->
+      <section class="view" id="view-client-signup">
+        <div class="alert error" id="signupAlert" role="alert"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5v5.5M12 16.4v.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span></span></div>
+        <form id="signupForm" novalidate>
+          <div class="field" data-field="name">
+            <label for="sName">Full name</label>
+            <div class="input-wrap">
+              <svg class="lead" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c.6-3.6 3.5-5.5 7-5.5s6.4 1.9 7 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <input type="text" id="sName" autocomplete="name" placeholder="Your full name">
+            </div>
+            <div class="field-error">Please enter your full name.</div>
+          </div>
+          <div class="field-row">
+            <div class="field" data-field="email">
+              <label for="sEmail">Email</label>
+              <div class="input-wrap">
+                <svg class="lead" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="m4.5 7.5 7.5 5.5 7.5-5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <input type="email" id="sEmail" autocomplete="email" placeholder="you@example.com" autocapitalize="off" spellcheck="false">
+              </div>
+              <div class="field-error">Enter a valid email.</div>
+            </div>
+            <div class="field" data-field="phone">
+              <label for="sPhone">Phone</label>
+              <div class="input-wrap">
+                <svg class="lead" viewBox="0 0 24 24" fill="none"><path d="M6.6 4.2a1.8 1.8 0 0 1 1.7 1.1l.8 2.1a1.8 1.8 0 0 1-.5 1.9l-1 .9a13.7 13.7 0 0 0 7.5 7.5l.9-1a1.8 1.8 0 0 1 1.9-.5l2.1.8a1.8 1.8 0 0 1 1.1 1.7v2.1A1.8 1.8 0 0 1 19.4 20c-8.9 0-16.2-7.3-16.2-16.2A1.8 1.8 0 0 1 5 2h2.1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                <input type="tel" id="sPhone" autocomplete="tel" placeholder="+977" inputmode="tel">
+              </div>
+              <div class="field-error">Enter a valid phone number.</div>
+            </div>
+          </div>
+          <div class="field" data-field="password">
+            <label for="sPass">Create password</label>
+            <div class="input-wrap">
+              <svg class="lead" viewBox="0 0 24 24" fill="none"><rect x="4.5" y="10.5" width="15" height="9.5" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <input type="password" id="sPass" class="has-toggle" autocomplete="new-password" placeholder="At least 8 characters">
+              <button type="button" class="toggle-pw" aria-label="Show password" data-toggle="sPass">
+                <svg class="eye" viewBox="0 0 24 24" fill="none"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+                <svg class="eye-off" viewBox="0 0 24 24" fill="none"><path d="M3 3l18 18M10.6 6a9.6 9.6 0 0 1 1.4-.1c6 0 9.5 6.1 9.5 6.1a16 16 0 0 1-3 3.7M6.4 7.7A16 16 0 0 0 2.5 12S6 18.5 12 18.5c1.5 0 2.9-.4 4.1-1M9.9 10a3 3 0 0 0 4.1 4.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="strength" id="strengthBar" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <div class="strength-text" id="strengthText">Use 8+ characters with letters and numbers.</div>
+            <div class="field-error">Password must be at least 8 characters.</div>
+          </div>
+          <div class="field" data-field="confirm">
+            <label for="sConfirm">Confirm password</label>
+            <div class="input-wrap">
+              <svg class="lead" viewBox="0 0 24 24" fill="none"><rect x="4.5" y="10.5" width="15" height="9.5" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <input type="password" id="sConfirm" autocomplete="new-password" placeholder="Repeat your password">
+            </div>
+            <div class="field-error">Passwords do not match.</div>
+          </div>
+          <div class="field" data-field="terms" style="margin-bottom:22px">
+            <label class="check" style="align-items:flex-start"><input type="checkbox" id="sTerms"><span class="box" style="margin-top:1px"><svg viewBox="0 0 12 12" fill="none"><path d="m2.5 6.3 2.4 2.4 4.6-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="line-height:1.5">I agree to the Terms of Service and Privacy Policy.</span></label>
+            <div class="field-error">Please accept the terms to continue.</div>
+          </div>
+          <button type="submit" class="btn">
+            <span class="spinner" aria-hidden="true"></span>
+            <span class="btn-label">Create account</span><span class="btn-loading-label">Creating account…</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+        <div class="switch-line">Already have an account? <button type="button" data-goto="signin">Sign in</button></div>
+      </section>
+
+      <!-- ===== FORGOT PASSWORD ===== -->
+      <section class="view" id="view-forgot">
+        <div class="alert okay" id="forgotAlert" role="status"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="m8.2 12.3 2.6 2.6 5-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span></span></div>
+        <form id="forgotForm" novalidate>
+          <div class="field" data-field="email">
+            <label for="fEmail">Account email</label>
+            <div class="input-wrap">
+              <svg class="lead" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="m4.5 7.5 7.5 5.5 7.5-5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <input type="email" id="fEmail" autocomplete="email" placeholder="you@example.com" autocapitalize="off" spellcheck="false">
+            </div>
+            <div class="field-error">Enter a valid email address.</div>
+          </div>
+          <button type="submit" class="btn">
+            <span class="spinner" aria-hidden="true"></span>
+            <span class="btn-label">Send reset link</span><span class="btn-loading-label">Sending…</span>
+          </button>
+        </form>
+        <div class="switch-line"><button type="button" data-goto="signin">← Back to sign in</button></div>
+      </section>
+
+      <!-- ===== STAFF SIGN IN ===== -->
+      <section class="view" id="view-staff">
+        <div class="alert error" id="staffAlert" role="alert"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5v5.5M12 16.4v.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span></span></div>
+        <form id="staffForm" novalidate>
+          <div class="field" data-field="email">
+            <label for="tEmail">Staff email</label>
+            <div class="input-wrap">
+              <svg class="lead" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="m4.5 7.5 7.5 5.5 7.5-5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <input type="email" id="tEmail" autocomplete="username" placeholder="name@fotostarnepal.com" autocapitalize="off" spellcheck="false">
+            </div>
+            <div class="field-error">Enter your staff email address.</div>
+          </div>
+          <div class="field" data-field="password">
+            <div class="label-row"><label for="tPass" style="margin:0">Password</label></div>
+            <div class="input-wrap">
+              <svg class="lead" viewBox="0 0 24 24" fill="none"><rect x="4.5" y="10.5" width="15" height="9.5" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <input type="password" id="tPass" class="has-toggle" autocomplete="current-password" placeholder="Staff password">
+              <button type="button" class="toggle-pw" aria-label="Show password" data-toggle="tPass">
+                <svg class="eye" viewBox="0 0 24 24" fill="none"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+                <svg class="eye-off" viewBox="0 0 24 24" fill="none"><path d="M3 3l18 18M10.6 6a9.6 9.6 0 0 1 1.4-.1c6 0 9.5 6.1 9.5 6.1a16 16 0 0 1-3 3.7M6.4 7.7A16 16 0 0 0 2.5 12S6 18.5 12 18.5c1.5 0 2.9-.4 4.1-1M9.9 10a3 3 0 0 0 4.1 4.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="field-error">Enter your password.</div>
+          </div>
+          <div class="row-between">
+            <label class="check"><input type="checkbox" id="tRemember"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="m2.5 6.3 2.4 2.4 4.6-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Remember this device</label>
+          </div>
+          <button type="submit" class="btn dark">
+            <span class="spinner" aria-hidden="true"></span>
+            <span class="btn-label">Sign in to staff portal</span><span class="btn-loading-label">Verifying…</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+        <p class="legal">Demo staff access: <strong>fotostar@gmail.com</strong> · <strong>12345678</strong><br>This browser-only demo is not secure authentication.</p>
+      </section>
+
+      <!-- ===== SUCCESS ===== -->
+      <section class="view success" id="view-success">
+        <div class="success-mark"><svg viewBox="0 0 24 24" fill="none"><path d="m5.5 12.5 4.2 4.2 8.8-9.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="eyebrow" id="successEyebrow">Signed in</div>
+        <h1 id="successTitle">Welcome back.</h1>
+        <p class="sub" id="successText">You're signed in.</p>
+        <div class="session-card">
+          <div class="session-row"><span>Name</span><span id="sessName">—</span></div>
+          <div class="session-row"><span>Email</span><span id="sessEmail">—</span></div>
+          <div class="session-row"><span>Role</span><span><span class="badge" id="sessRole">Client</span></span></div>
+          <div class="session-row"><span>Signed in</span><span id="sessTime">—</span></div>
+        </div>
+        <div class="stack">
+          <button type="button" class="btn" id="continueBtn"><span class="btn-label" id="continueLabel">Continue</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" class="btn ghost" id="signOutBtn"><span class="btn-label">Sign out</span></button>
+        </div>
+        <div class="progress" id="redirectBar"><i></i></div>
+        <div class="redirect-note" id="redirectNote">Redirecting…</div>
+      </section>
+
+      <p class="legal" id="footLegal">Demo portal only. Account data is stored in this browser and is not a secure authentication service.</p>
+    </div>
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/signin.js"></script>
+</body>
+</html>
